@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dc_Etrans
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Dc
+ * @package    Dc_Etrans
+ * @copyright  Copyright (c) 2015 Damián Culotta. (http://www.damianculotta.com.ar/)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <sections>
+        <carriers translate="label" module="etrans">
+            <groups>
+                <etrans translate="label" module="etrans">
+                    <label>Etrans</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <active translate="label" module="etrans">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <api_key translate="label" module="etrans">
+                            <label>API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_key>
+                        <api_secret translate="label" module="etrans">
+                            <label>API Secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </api_secret>
+                        <title translate="label" module="etrans">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <name translate="label" module="etrans">
+                            <label>Method Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </name>
+                        <use_taxvat translate="label" module="etrans">
+                            <label>Use Tax/Vat Number</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </use_taxvat>
+                        <insurance translate="label" module="etrans">
+                            <label>Insurance</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_insurance</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </insurance>
+                        <pickup_time translate="label" module="etrans">
+                            <label>Pickup Time</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_time_pickup</source_model>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </pickup_time>
+                        <delivery_time translate="label" module="etrans">
+                            <label>Delivery Time</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_time_delivery</source_model>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </delivery_time>
+                        <map_attributes translate="label comment" module="etrans">
+                            <label>Map Attributes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[You can use medium shipment cost or you can send the right values to get the accurate quote.]]></comment>
+                        </map_attributes>
+                        <attribute_height translate="label" module="etrans">
+                            <label>Attribute for Height</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_catalog_product_attributes</source_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <map_attributes>1</map_attributes>
+                            </depends>
+                        </attribute_height>
+                        <attribute_width translate="label" module="etrans">
+                            <label>Attribute for Width</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_catalog_product_attributes</source_model>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <map_attributes>1</map_attributes>
+                            </depends>
+                        </attribute_width>
+                        <attribute_depth translate="comment" module="etrans">
+                            <label>Attribute for Depth</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_catalog_product_attributes</source_model>
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <map_attributes>1</map_attributes>
+                            </depends>
+                        </attribute_depth>
+                        <attribute_weight translate="comment" module="etrans">
+                            <label>Attribute for Weight</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_catalog_product_attributes</source_model>
+                            <sort_order>54</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <map_attributes>1</map_attributes>
+                            </depends>
+                        </attribute_weight>
+                        <attribute_price translate="comment" module="etrans">
+                            <label>Attribute for Price</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>etrans/system_config_source_catalog_product_attributes</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <map_attributes>1</map_attributes>
+                            </depends>
+                        </attribute_price>
+                        <sort_order translate="label" module="etrans">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>
+                        <sallowspecific translate="label" module="etrans">
+                            <label>Ship to Applicable Countries</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>91</sort_order>
+                            <frontend_class>shipping-applicable-country</frontend_class>
+                            <source_model>adminhtml/system_config_source_shipping_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sallowspecific>
+                        <specificcountry translate="label" module="etrans">
+                            <label>Ship to Specific Countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>92</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </specificcountry>
+                    </fields>
+                </etrans>
+            </groups>
+        </carriers>
+    </sections>
+</config>
